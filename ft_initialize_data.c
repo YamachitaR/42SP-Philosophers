@@ -6,13 +6,14 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 02:03:44 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/11/04 01:26:02 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/11/29 21:57:15 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
 static int ft_atoi (char *str);
+static int check_value(t_data *data);
 
 int ft_initialize_data(t_data *data, char **argv)
 {
@@ -40,4 +41,10 @@ static int ft_atoi (char *str)
 		i ++;
 	}
 	return (atoi);
+}
+
+
+static int check_value(t_data *data)
+{
+	
 }
