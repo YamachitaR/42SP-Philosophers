@@ -6,13 +6,13 @@
 #    By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 21:29:36 by ryoshio-          #+#    #+#              #
-#    Updated: 2022/11/02 04:20:06 by ryoshio-         ###   ########.fr        #
+#    Updated: 2022/11/29 19:22:57 by ryoshio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 
-SRC = main.c ft_check_arg.c ft_initialize_data.c
+SRC = main.c ft_check_arg.c ft_initialize_data.c ft_atoi.c
 
 CC = gcc
 

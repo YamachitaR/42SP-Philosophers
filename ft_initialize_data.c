@@ -6,14 +6,12 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 02:03:44 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/11/29 21:57:15 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:49:11 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-static int ft_atoi (char *str);
-static int check_value(t_data *data);
 
 int ft_initialize_data(t_data *data, char **argv)
 {
@@ -25,26 +23,7 @@ int ft_initialize_data(t_data *data, char **argv)
 		data->number_of_times_each_philosopher_must_eat = ft_atoi(argv[5]);
 	else 
 		data->number_of_times_each_philosopher_must_eat = 0;
+
+	data->state = malloc(data->number_of_philosophers * sizeof(int));
 	return (0);
-}
-
-static int ft_atoi (char *str)
-{
-	int	i;
-	int atoi;
-
-	atoi = 0;
-	i = 0;
-	while(str[i])
-	{
-		atoi= atoi*10 + str[i] - '0';
-		i ++;
-	}
-	return (atoi);
-}
-
-
-static int check_value(t_data *data)
-{
-	
 }
