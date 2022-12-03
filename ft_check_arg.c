@@ -6,13 +6,13 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 23:03:01 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/11/29 19:26:45 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/01 19:33:59 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-static int	is_unsigned_integer(char *str);
+static int	ft_is_unsigned_integer(char *str);
 
 int	ft_check_arg(int argc, char **argv)
 {
@@ -26,7 +26,7 @@ int	ft_check_arg(int argc, char **argv)
 	i = 1;
 	while (argv[i])
 	{
-		if (is_unsigned_integer(argv[i]) == 0)
+		if (ft_is_unsigned_integer(argv[i]) == 0 || ft_atoi(argv[i]) < 1)
 		{
 			printf("The argument value (%s) is wrong!\n", argv[i]);
 			return (0);
@@ -36,7 +36,7 @@ int	ft_check_arg(int argc, char **argv)
 	return (1);
 }
 
-static int	is_unsigned_integer(char *str)
+static int	ft_is_unsigned_integer(char *str)
 {
 	int	i;
 

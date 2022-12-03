@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_time_ms.c                                      :+:      :+:    :+:   */
+/*   ft_free_data.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/01 22:28:18 by lorenuar          #+#    #+#             */
-/*   Updated: 2022/11/29 22:14:30 by ryoshio-         ###   ########.fr       */
+/*   Created: 2022/12/02 20:36:49 by ryoshio-          #+#    #+#             */
+/*   Updated: 2022/12/02 21:38:14 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-// retorna o tempo
-t_time	get_time_ms(void)
+void ft_free_data(t_data *data)
 {
-	struct timeval	tv;
-
-	gettimeofday(&tv, NULL);// estuda um pouco 
-	return ((tv.tv_sec) * 1000LL + (tv.tv_usec) / 1000);
+    int i;
+    
+    pthread_mutex_destroy(&data->mutex);
+	i = -1;
+	while(++i < data->number_of_philosophers)
+		 pthread_mutex_destroy(&data->forks[i]);
+    free(data->state);
+   free(data->forks);
+   free(data->pthread_philosophers);
+   free(data);
 }

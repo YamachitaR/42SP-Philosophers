@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 21:29:31 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/11/30 20:41:30 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/02 20:48:52 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,14 @@ int main (int argc, char **argv)
 	ft_initialize_data(data, argv);
 
 	// 1 filosofo
-	data->number_of_philosophers = 1;
-
+	//data->number_of_philosophers = 1;
 	
-	// Objetivo de  hoje imprimir o tempo
 
+	ft_free_data(data);
 
-	printf("%d",  data->number_of_philosophers);
 	return(0);
 }
 
-long int  timestamp_in_ms (void)
-{
-	struct timeval	tv;
-	gettimeofday(&tv, NULL);
-	return( (tv.tv_sec * 1000) + (tv.tv_usec / 1000));
-}
+
 
 

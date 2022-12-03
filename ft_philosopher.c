@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_philosopher.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 19:19:18 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/11/30 21:06:11 by ryoshio-         ###   ########.fr       */
+/*   Created: 2022/12/02 19:05:25 by ryoshio-          #+#    #+#             */
+/*   Updated: 2022/12/02 20:25:00 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "philo.h" 
 
-int ft_atoi (char *str)
+void *ft_philosopher(void *philo)
 {
-	int	i;
-	int atoi;
+    t_data *data;
 
-	atoi = 0;
-	i = 0;
-	while(str[i])
-	{
-		atoi= atoi * 10 + str[i] - '0';
-		i ++;
-	}
-	return (atoi);
+    data = (t_data*)philo;
+   // pthread_mutex_lock(&data->mutex);
+ 
+    printf("%d",  data->philo);
+    //pthread_mutex_unlock(&data->mutex);
+    
+
+    return(NULL);
+    //pthread_exit(NULL); // nao permitido
+    
 }
