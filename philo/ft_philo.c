@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 19:05:25 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/11 21:52:02 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/11 23:29:59 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ void *ft_philo(void *arg)
       
      
    
-      //  if(ft_philo_eat(philo))
-      //    return(NULL);
-      //if(ft_philo_sleep(philo))
-      //    return(NULL);
-      if(!ft_philo_think(philo))
+      if(ft_philo_eat(philo))
+        return(NULL);
+      if(ft_philo_sleep(philo))
+        return(NULL);
+      if(ft_philo_think(philo))
         return(NULL);
   
     }

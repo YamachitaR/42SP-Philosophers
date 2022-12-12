@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 21:29:41 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/11 20:56:45 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/11 23:27:55 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int ft_data_init(t_data **data, char **argv);
 void *ft_philo(void *arg);
  int ft_print(t_philo *philo, int flag);
 int ft_philo_pthread(t_philo *philo, t_data *data);
-int ft_philo_think(t_philo *philo);
+
 long  ft_time_epoch_in_ms (void);
  int ft_error_malloc(void);
 int ft_error_mutex(void);
@@ -90,6 +90,9 @@ int ft_error_pthread(void);
  int	ft_mutex_get(int *get, pthread_mutex_t *mutex);
 void ft_mutex_set(int *nbr, pthread_mutex_t *mutex, int value);
 
+int ft_philo_eat(t_philo *philo);
+int ft_philo_think(t_philo *philo);
+int	ft_philo_sleep(t_philo *philo);
 void *ft_monitoring(t_philo *philo, int size);
 #endif
 

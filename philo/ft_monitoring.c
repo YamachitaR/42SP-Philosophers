@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:27:05 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/11 22:03:37 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/11 22:29:05 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void *ft_monitoring(t_philo *philo, int size)
     while(i< size)
     {
     
-        if( ft_mutex_get(philo[i].status , philo->mutex_status)       != DINNER)
+      
+        if( ft_mutex_get(philo[i].status , philo[i].mutex_status)       != DINNER)
         {
             
              ft_print(&philo[i], DIED);

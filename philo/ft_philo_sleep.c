@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_eat.c                                           :+:      :+:    :+:   */
+/*   ft_philo_sleep.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/04 03:37:04 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/04 03:38:09 by ryoshio-         ###   ########.fr       */
+/*   Created: 2022/12/11 22:24:55 by ryoshio-          #+#    #+#             */
+/*   Updated: 2022/12/11 22:33:33 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void ft_eat(t_data *data)
+int	ft_philo_sleep(t_philo *philo)
 {
-    printf("Filosofo %d comendo!\n", data->philo);
+	if(ft_print(philo, SLEEP))
+		return(1);
+	usleep(philo->time_sleep* 1000);
+	return(0);
 }
