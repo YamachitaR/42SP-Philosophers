@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 21:29:41 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/12 04:52:32 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/12 09:44:39 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include<stdio.h>
 # include<sys/time.h>
 
-
 # define FORK 1
 # define EAT 2
 # define SLEEP 3
@@ -29,28 +28,22 @@
 # define DINNER 7
 # define OFF 8
 
-
 typedef struct s_philo
 {
 	int id;
 	long  time_start;
 	long time_meal;
-	
 	int number_philo;
 	int time_die;
 	int	time_eat;
 	int time_sleep;
 	int max_eat;
-	
-
 	pthread_mutex_t	*fork_first;
 	pthread_mutex_t	*fork_second;
 	pthread_mutex_t	*mutex_print;
 	pthread_mutex_t mutex_philo;
 	pthread_mutex_t mutex_time;
 	int status;
-		
-
 }t_philo;
 
 
@@ -81,7 +74,7 @@ int ft_data_init(t_data **data, char **argv);
 void *ft_philo(void *arg);
  int ft_print(t_philo *philo, int flag);
 int ft_philo_pthread(t_philo *philo, t_data *data);
-
+int ft_clean(t_data *data, t_philo *philo);
 long  ft_time_epoch_in_ms (void);
  int ft_error_malloc(void);
 int ft_error_mutex(void);

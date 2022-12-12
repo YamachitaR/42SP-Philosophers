@@ -6,23 +6,22 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 19:19:18 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/09 06:15:42 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/12 07:34:11 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-
-long  ft_atoi (char *str)
+long	ft_atoi(char *str)
 {
-	int	i;
-	long  atoi;
+	int		i;
+	long	atoi;
 
 	atoi = 0;
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
-		atoi= atoi * 10 + str[i] - '0';
+		atoi = atoi * 10 + str[i] - '0';
 		i ++;
 	}
 	return (atoi);

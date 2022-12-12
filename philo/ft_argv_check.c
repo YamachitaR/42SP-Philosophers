@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 23:03:01 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/11 00:25:03 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/12 07:32:35 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int	ft_argv_check(int argc, char **argv)
 	i = 1;
 	while (argv[i])
 	{
-		if (ft_is_unsigned_integer(argv[i]) == 0 || ft_atoi(argv[i]) < 1  || ft_atoi(argv[i]) > 2147483647)
+		if (ft_is_unsigned_integer(argv[i]) == 0 || ft_atoi(argv[i]) < 1
+			|| ft_atoi(argv[i]) > 2147483647)
 			return (printf("The argument value (%s) is wrong!\n", argv[i]));
 		i ++;
 	}
