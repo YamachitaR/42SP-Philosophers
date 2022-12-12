@@ -6,7 +6,7 @@
 #    By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 21:29:36 by ryoshio-          #+#    #+#              #
-#    Updated: 2022/12/12 09:37:15 by ryoshio-         ###   ########.fr        #
+#    Updated: 2022/12/12 10:30:41 by ryoshio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ SRC = main.c error.c \
 
 CC = gcc
 
-CFLAG = -g -Wall -Wextra -Werror -fsanitize=thread
+CFLAG = -g -Wall -Wextra -Werror #-fsanitize=thread
 
 OBJS =  ${SRC:.c=.o}
 

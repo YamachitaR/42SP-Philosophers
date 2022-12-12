@@ -1,25 +1,25 @@
-    1   1 has taken a fork
-    1   1 has taken a fork
-    1   1 is eating
-    3   2 has taken a fork
-    3   3 has taken a fork
-    4   4 has taken a fork
-  101   1 is sleeping
-  101   2 has taken a fork
-  101   2 is eating
-  201   1 is thinking
-  201   3 has taken a fork
-  201   3 is eating
-  201   2 is sleeping
-  202   1 has taken a fork
-  202   1 has taken a fork
-  202   1 is eating
-  301   2 is thinking
-  301   3 is sleeping
-  301   4 has taken a fork
-  302   4 is eating
-  302   1 is sleeping
-  302   2 has taken a fork
-  302   2 has taken a fork
-  302   2 is eating
+    3   1 has taken a fork
+    3   1 has taken a fork
+    3   1 is eating
+    4   2 has taken a fork
+    4   3 has taken a fork
+    5   4 has taken a fork
+  103   1 is sleeping
+  103   2 has taken a fork
+  103   2 is eating
+  203   1 is thinking
+  203   2 is sleeping
+  203   3 has taken a fork
+  203   3 is eating
+  203   1 has taken a fork
+  203   1 has taken a fork
+  203   1 is eating
+  303   2 is thinking
+  303   3 is sleeping
+  303   4 has taken a fork
+  303   4 is eating
+  303   1 is sleeping
+  303   2 has taken a fork
+  304   2 has taken a fork
+  304   2 is eating
   401   1 died

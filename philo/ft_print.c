@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/09 03:45:04 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/12 09:33:29 by ryoshio-         ###   ########.fr       */
+/*   Created: 2022/12/12 11:03:47 by ryoshio-          #+#    #+#             */
+/*   Updated: 2022/12/12 11:30:59 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	ft_print(t_philo *philo, int flag)
 	pthread_mutex_lock(philo->mutex_print);
 	if (flag == DIED)
 		printf("%5ld %3d died\n", timestam, philo->id);
-	if (ft_mutex_get(&philo->status, &philo->mutex_philo) != DINNER)
+	if (ft_mutex_get(&philo->status, &philo->mutex_philo)
+		!= DINNER || flag == DIED)
 	{
 		pthread_mutex_unlock(philo->mutex_print);
 		return (1);
@@ -36,5 +37,4 @@ int	ft_print(t_philo *philo, int flag)
 		printf("%5ld %3d is thinking\n", timestam, philo->id);
 	pthread_mutex_unlock(philo->mutex_print);
 	return (0);
-	}
-	
+}

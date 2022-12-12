@@ -1,15 +1,15 @@
-    2   1 has taken a fork
-    2   1 has taken a fork
-    2   1 is eating
-    4   2 has taken a fork
-    4   3 has taken a fork
-  202   1 is sleeping
-  202   2 has taken a fork
-  202   2 is eating
-  402   1 is thinking
-  402   2 is sleeping
-  402   3 has taken a fork
-  402   3 is eating
+    1   1 has taken a fork
+    1   1 has taken a fork
+    1   1 is eating
+    2   2 has taken a fork
+    2   3 has taken a fork
+  201   1 is sleeping
+  201   2 has taken a fork
+  201   2 is eating
+  401   1 is thinking
+  401   3 has taken a fork
+  401   3 is eating
+  401   2 is sleeping
   402   1 has taken a fork
   402   1 has taken a fork
   402   1 is eating
