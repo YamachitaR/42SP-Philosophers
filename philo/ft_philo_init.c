@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 05:34:29 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/12 03:17:23 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/12 06:39:20 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ static int ft_philo_value(t_philo *philo, t_data *data)
         philo[i].mutex_print = &data->mutex_print;
         if(pthread_mutex_init(&philo[i].mutex_philo, NULL))
             return(ft_error_mutex());
+         if(pthread_mutex_init(&philo[i].mutex_time, NULL))
+            return(ft_error_mutex());
     }
     return(0);
     
@@ -65,20 +67,22 @@ static void ft_philo_fork(t_philo *philo, t_data *data)
     int right;
     
     i = -1;
+    
     while(++i <  data->number_of_philosophers)
     {
         right = i;
         left =(i + 1) % data->number_of_philosophers;
-        if(data->number_of_philosophers > 1 && data->number_of_philosophers ==  i + 1 )
+        if(data->number_of_philosophers ==1)
+            philo[i].fork_first = &data->forks[right];
+        if(data->number_of_philosophers ==  i + 1 )
    		{
 			philo[i].fork_first = &data->forks[right];
 			philo[i].fork_second = &data->forks[left];
-		}else
+		}else 
         {
             philo[i].fork_first = &data->forks[left];
 			philo[i].fork_second = &data->forks[right];
         }
-
     }
 
 }

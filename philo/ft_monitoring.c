@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:27:05 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/12 04:49:25 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/12 06:52:58 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,25 @@ int  ft_monitoring(t_philo *philo, int size, long int time_life)
 
     i =0;
     count_philo_enough = 0;
-    while(i< size)
+    while(1)
     {
-        if( ft_mutex_get(&philo[i].status, &philo[i].mutex_philo)== FULL)
-            count_philo_enough ++;
-        if(count_philo_enough == size)
-            return(0);
-        if(ft_time_epoch_in_ms() - ft_mutex_get_time(&philo[i].time_meal ,
-            &philo[i].mutex_philo ) > time_life)
+             if(ft_time_epoch_in_ms() - philo[0].time_meal > time_life)
             {
                 ft_update_status(philo,size);
                 return(ft_print(philo, DIED));
             }
+        if( ft_mutex_get(&philo[i].status, &philo[i].mutex_philo)== FULL)
+           count_philo_enough ++;
+       if(count_philo_enough == size)
+            return(0);
+   
         i++;
         if(i == size)
         {
             count_philo_enough =0;
             i = 0;
         }
-      usleep(96);
+      usleep(100);
     }
     return (0);
 }

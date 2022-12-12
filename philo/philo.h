@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 21:29:41 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/12 04:17:06 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/12 04:52:32 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct s_philo
 	pthread_mutex_t	*fork_second;
 	pthread_mutex_t	*mutex_print;
 	pthread_mutex_t mutex_philo;
+	pthread_mutex_t mutex_time;
 	int status;
 		
 
