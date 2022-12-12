@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 21:29:31 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/11 18:03:27 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/12 00:28:55 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,3 @@ int main (int argc, char **argv)
 
 // valgrind  --leak-check=full
 
-
-/*
-void ft_data_clean(t_data *data)
-{
-
-	pthread_t		*pthread;
-	pthread_mutex_t	*forks;
-	
-}
-
-*/

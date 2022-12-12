@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:27:05 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/11 22:29:05 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/11 23:56:56 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ void *ft_monitoring(t_philo *philo, int size)
 {
     int i;
 
-    
-    while(1)
-    {
+
         i =0;
     while(i< size)
     {
@@ -33,11 +31,11 @@ void *ft_monitoring(t_philo *philo, int size)
       
            
         i++;
+        if(i == size)
+            i = 0;
        usleep(100);
 
     }
-    usleep(100);
-
-    }
+  
     return (NULL);
 }

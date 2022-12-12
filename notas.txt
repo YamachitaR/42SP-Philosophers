@@ -1,7 +1,7 @@
 # Pergunta para comunidade
 
 - Verificar se os arquivos tem que esta na pasta chamaso philo
-
+- 
 
 number_of_philosophers: The number of philosophers and also the number
 of forks.
