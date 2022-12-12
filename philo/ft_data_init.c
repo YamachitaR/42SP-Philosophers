@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 02:03:44 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/11 20:58:23 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/12 00:57:08 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int ft_data_init(t_data **data, char **argv)
 	if(!(*data)->pthread || !(*data)->forks )
 		return (ft_error_malloc());
 	ft_data_mutex(*data);
-	(*data)->status =DINNER;
+	
 	return(0);
 }
 
@@ -57,8 +57,9 @@ static int ft_data_mutex(t_data *data)
             return(ft_error_mutex());
         i ++;
     }
-    pthread_mutex_init(&data->mutex_print, NULL);
-	pthread_mutex_init(&data->mutex_status, NULL);    
+    if(pthread_mutex_init(&data->mutex_print, NULL))
+		return(ft_error_mutex());
+		
     return (0);  
 }
 

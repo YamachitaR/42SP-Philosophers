@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 03:45:04 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/11 21:31:04 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/12 01:00:13 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,14 @@
  {
     long timestam;
 
-
+ 
 
    pthread_mutex_lock(philo->mutex_print);
     
       timestam =  ft_time_epoch_in_ms() - philo->time_start;
  
-if( ft_mutex_get(philo->status , philo->mutex_status)!= DINNER)
+
+if( ft_mutex_get(&philo->status, &philo->mutex_philo)!= DINNER)
 {
    pthread_mutex_unlock(philo->mutex_print);
    return(1);

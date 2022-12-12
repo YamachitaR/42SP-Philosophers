@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 19:05:25 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/12 00:26:18 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/12 01:02:15 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void *ft_philo(void *arg)
     t_philo *philo;
     
     philo = (t_philo*)arg;
-
 
 
   
@@ -36,6 +35,7 @@ void *ft_philo(void *arg)
       
     while (1)     
     {
+     
       if(ft_philo_eat(philo))
         return(NULL);
       if(ft_philo_sleep(philo))

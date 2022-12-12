@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 05:34:29 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/12 00:30:32 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/12 01:14:39 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,17 @@ static void ft_philo_fork(t_philo *philo, t_data *data);
 
 int ft_philo_init(t_philo **philo, t_data **data)
 {
+
 	*philo =  malloc (sizeof(t_philo) * (*data)->number_of_philosophers );
 	if(!philo)
 		return (ft_error_malloc());
     ft_philo_value(*philo,*data);
     ft_philo_fork(*philo, *data);
+   
+
+    
+
+
     return(0);
 }
 
@@ -40,10 +46,9 @@ static void ft_philo_value(t_philo *philo, t_data *data)
         philo[i].time_eat = data->time_to_eat;
         philo[i].time_sleep = data->time_to_sleep;
         philo[i].max_eat = data->number_of_times_each_philosopher_must_eat;
-        philo[i].status = &data->status;
-        philo[i].mutex_status = &data->mutex_status;
+        philo[i].status = DINNER;
         philo[i].mutex_print = &data->mutex_print;
-
+        pthread_mutex_init(&philo[i].mutex_philo, NULL);
     }
     
 }

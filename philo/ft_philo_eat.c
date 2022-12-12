@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 03:37:04 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/11 23:35:16 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/12 01:00:59 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int ft_philo_eat(t_philo *philo)
 {
+    
 	pthread_mutex_lock(philo->fork_first);
 	if(ft_print(philo, FORK))
     {

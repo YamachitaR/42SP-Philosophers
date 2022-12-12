@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 21:29:31 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/12 00:28:55 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/12 01:06:34 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main (int argc, char **argv)
 {
 	t_data *data;
 	t_philo *philo;
-	 
+
 	if(ft_argv_check(argc, argv))
 		return (1);
 	if(ft_data_init(&data, argv))

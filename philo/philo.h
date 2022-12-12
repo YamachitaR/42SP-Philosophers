@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 21:29:41 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/11 23:27:55 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/12 00:49:22 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ typedef struct s_philo
 	pthread_mutex_t	*fork_first;
 	pthread_mutex_t	*fork_second;
 	pthread_mutex_t	*mutex_print;
-	pthread_mutex_t *mutex_status;
-	int *status;
+	pthread_mutex_t mutex_philo;
+	int status;
 		
 
 }t_philo;
@@ -56,7 +56,7 @@ typedef struct s_philo
 
 typedef struct s_data
 {
-	//AGV
+	
 	int number_of_philosophers;
 	int time_to_die;
 	int	time_to_eat;
@@ -67,8 +67,6 @@ typedef struct s_data
 	pthread_t		*pthread;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	mutex_print;
-	pthread_mutex_t mutex_status;
-	int status;
 }t_data;
 
 
