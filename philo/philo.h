@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 21:29:41 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/12 00:49:22 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/12 04:17:06 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 # define DIED 5
 # define FULL 6
 # define DINNER 7
-
+# define OFF 8
 
 
 typedef struct s_philo
@@ -35,8 +35,8 @@ typedef struct s_philo
 	int id;
 	long  time_start;
 	long time_meal;
-	int amount_meal;
-
+	
+	int number_philo;
 	int time_die;
 	int	time_eat;
 	int time_sleep;
@@ -85,13 +85,16 @@ long  ft_time_epoch_in_ms (void);
  int ft_error_malloc(void);
 int ft_error_mutex(void);
 int ft_error_pthread(void);
- int	ft_mutex_get(int *get, pthread_mutex_t *mutex);
-void ft_mutex_set(int *nbr, pthread_mutex_t *mutex, int value);
+
+ int ft_mutex_get( int *get, pthread_mutex_t *mutex);
+void ft_mutex_set( int *nbr, pthread_mutex_t *mutex,  int value);
+long int	ft_mutex_get_time(long int *time, pthread_mutex_t *mutex);
+void ft_mutex_set_time( long int *nbr, pthread_mutex_t *mutex,long int value);
 
 int ft_philo_eat(t_philo *philo);
 int ft_philo_think(t_philo *philo);
 int	ft_philo_sleep(t_philo *philo);
-void *ft_monitoring(t_philo *philo, int size);
+int ft_monitoring(t_philo *philo, int size, long int time_life);
 #endif
 
 

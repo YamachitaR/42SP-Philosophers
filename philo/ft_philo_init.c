@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 05:34:29 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/12 02:53:39 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/12 03:17:23 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,9 @@ static int ft_philo_value(t_philo *philo, t_data *data)
     i = -1;
     while(++ i < data->number_of_philosophers)
     {
+        philo[i].number_philo = data->number_of_philosophers;
         philo[i].id = i +1;
-        philo[i].amount_meal = 0;
+    
         philo[i].time_start = ft_time_epoch_in_ms();
         philo[i].time_meal = philo->time_start;
         philo[i].time_die = data->time_to_die;
