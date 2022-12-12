@@ -6,13 +6,13 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 05:34:29 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/12 01:14:39 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/12 02:53:39 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-static void ft_philo_value(t_philo *philo, t_data *data);
+static int ft_philo_value(t_philo *philo, t_data *data);
 static void ft_philo_fork(t_philo *philo, t_data *data);
 
 int ft_philo_init(t_philo **philo, t_data **data)
@@ -21,7 +21,8 @@ int ft_philo_init(t_philo **philo, t_data **data)
 	*philo =  malloc (sizeof(t_philo) * (*data)->number_of_philosophers );
 	if(!philo)
 		return (ft_error_malloc());
-    ft_philo_value(*philo,*data);
+    if(ft_philo_value(*philo,*data))
+        return(1);
     ft_philo_fork(*philo, *data);
    
 
@@ -31,7 +32,7 @@ int ft_philo_init(t_philo **philo, t_data **data)
     return(0);
 }
 
-static void ft_philo_value(t_philo *philo, t_data *data)
+static int ft_philo_value(t_philo *philo, t_data *data)
 {
     int i;
     
@@ -48,8 +49,10 @@ static void ft_philo_value(t_philo *philo, t_data *data)
         philo[i].max_eat = data->number_of_times_each_philosopher_must_eat;
         philo[i].status = DINNER;
         philo[i].mutex_print = &data->mutex_print;
-        pthread_mutex_init(&philo[i].mutex_philo, NULL);
+        if(pthread_mutex_init(&philo[i].mutex_philo, NULL))
+            return(ft_error_mutex());
     }
+    return(0);
     
 }
 

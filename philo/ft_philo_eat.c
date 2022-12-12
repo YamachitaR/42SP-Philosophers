@@ -6,12 +6,12 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 03:37:04 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/12 01:00:59 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/12 02:57:52 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-
+static int ft_philo_full(t_philo *philo);
 int ft_philo_eat(t_philo *philo)
 {
     
@@ -24,12 +24,14 @@ int ft_philo_eat(t_philo *philo)
 	pthread_mutex_lock(philo->fork_second);
 	if(ft_print(philo, FORK))
     {
+        
         pthread_mutex_unlock(philo->fork_first);
 	    pthread_mutex_unlock(philo->fork_second);   
         return(1);
     }
 	if(ft_print(philo, EAT))
     {
+       
         pthread_mutex_unlock(philo->fork_first);
         pthread_mutex_unlock(philo->fork_second);   
         return(1);
@@ -39,5 +41,29 @@ int ft_philo_eat(t_philo *philo)
     usleep(philo->time_eat * 1000);
     pthread_mutex_unlock(philo->fork_first);
 	pthread_mutex_unlock(philo->fork_second);
-    return(0);
+    
+
+    return(ft_philo_full(philo));
+}
+
+static int ft_philo_full(t_philo *philo)
+{
+   
+   
+    if(ft_mutex_get(&philo->status, &philo->mutex_philo)!= DINNER)
+        return(1);
+
+    if(philo->max_eat == -1)
+        return(0);
+ 
+    if( !(-- philo->max_eat))
+    {
+       
+        ft_mutex_set(&philo->status, &philo->mutex_philo, FULL);
+        return(1);   
+    }  
+  
+        
+       
+    return (0);
 }
