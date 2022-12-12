@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 02:03:44 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/11 05:27:53 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/11 20:58:23 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,16 @@ int ft_data_init(t_data **data, char **argv)
 	if(!data)
 		return (ft_error_malloc());
 	ft_argv_to_data(*data, argv);
-	(*data)->status = DINNER;
 	(*data)->pthread = malloc ((*data)->number_of_philosophers *sizeof(pthread_t));
 	(*data)->forks = malloc ((*data)->number_of_philosophers *sizeof(pthread_mutex_t));
+
+	
+	
+	
 	if(!(*data)->pthread || !(*data)->forks )
 		return (ft_error_malloc());
 	ft_data_mutex(*data);
+	(*data)->status =DINNER;
 	return(0);
 }
 

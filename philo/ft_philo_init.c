@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 05:34:29 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/11 06:27:37 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/11 20:57:13 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ static void ft_philo_value(t_philo *philo, t_data *data)
         philo[i].time_sleep = data->time_to_sleep;
         philo[i].max_eat = data->number_of_times_each_philosopher_must_eat;
         philo[i].status = &data->status;
+        philo[i].mutex_status = &data->mutex_status;
+        philo[i].mutex_print = &data->mutex_print;
 
     }
     

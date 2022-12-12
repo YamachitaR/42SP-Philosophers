@@ -6,33 +6,46 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 19:05:25 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/10 13:21:26 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/11 21:52:02 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h" 
-static int ft_philo_one(t_data *data);
+
 
 void *ft_philo(void *arg)
 {
-    t_data *data;
+    t_philo *philo;
     
-    data = (t_data*)arg;
+    philo = (t_philo*)arg;
 
 
-    /*
 
-    if (chegar se tem um fisofo == 1)
-		return (ft_philo_one(data));
-*/
+  
+  //  if(philo->id %2 == 0)
+  //       {
+         
+  //          ft_mutex_set(philo->status, philo->mutex_status , EAT);
+
+        
+  //       ft_print(philo, EAT);
+    
+  //         usleep(1000);
+  //       }else
+  //          ft_print(philo, SLEEP);
+      
     while (1)     
     {
-       if(ft_philo_eat(data))
-         return(NULL);
-        if(ft_philo_sleep(data))
-         return(NULL);
-        if(ft_philo_think(data))
-         return(NULL);
+      
+     
+   
+      //  if(ft_philo_eat(philo))
+      //    return(NULL);
+      //if(ft_philo_sleep(philo))
+      //    return(NULL);
+      if(!ft_philo_think(philo))
+        return(NULL);
+  
     }
     
     return(NULL);

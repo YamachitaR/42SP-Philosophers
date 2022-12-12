@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 15:20:31 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/07 16:23:36 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/11 20:00:34 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int main(int argc, char *argv[ ])
   
     }
 
-    printf("oi");
+  
     pthread_mutex_destroy(&trava);
 
     

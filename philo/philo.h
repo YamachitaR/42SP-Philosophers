@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 21:29:41 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/11 06:28:04 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/11 20:56:45 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,7 @@ typedef struct s_data
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	mutex_print;
 	pthread_mutex_t mutex_status;
-	
-
 	int status;
-	
-
 }t_data;
 
 
@@ -83,13 +79,18 @@ long  ft_time_epoch_in_ms (void); //ok
 int ft_argv_check(int argc, char **argv); // ok
 int ft_data_init(t_data **data, char **argv);
  int ft_philo_init(t_philo **philo, t_data **data);
-
- int ft_print(t_philo **philo, int flag);
-
+void *ft_philo(void *arg);
+ int ft_print(t_philo *philo, int flag);
+int ft_philo_pthread(t_philo *philo, t_data *data);
+int ft_philo_think(t_philo *philo);
 long  ft_time_epoch_in_ms (void);
  int ft_error_malloc(void);
 int ft_error_mutex(void);
+int ft_error_pthread(void);
+ int	ft_mutex_get(int *get, pthread_mutex_t *mutex);
+void ft_mutex_set(int *nbr, pthread_mutex_t *mutex, int value);
 
+void *ft_monitoring(t_philo *philo, int size);
 #endif
 
 

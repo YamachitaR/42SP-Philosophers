@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 21:29:31 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/11 06:05:40 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/12/11 18:03:27 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,14 @@ int main (int argc, char **argv)
 		return (1);
 	if(ft_philo_init(&philo, &data))
 		return(1);
-		
-	//if(ft_philo_main(&data));
-	//	return(1);
-printf("%ld", philo[0].time_start - philo[899].time_start);
+	if(ft_philo_pthread(philo, data))
+		return(1);
 	//ft_data_clean(&data);
 	return(0);
 }
 
 // valgrind  --leak-check=full
+
 
 /*
 void ft_data_clean(t_data *data)

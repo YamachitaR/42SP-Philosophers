@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_philo_think.c                                   :+:      :+:    :+:   */
+/*   ft_philo_pthread.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/03 20:22:02 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/12/11 21:51:29 by ryoshio-         ###   ########.fr       */
+/*   Created: 2022/12/04 18:56:09 by ryoshio-          #+#    #+#             */
+/*   Updated: 2022/12/11 21:32:28 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h" 
 
-int ft_philo_think(t_philo *philo)
+int ft_philo_pthread(t_philo *philo, t_data *data)
 {
-     // checar se esta vivo e que outos tb estejam vivo
-        
-     if(ft_print(philo, THINK))
-          return (1);
-    ft_print(philo, EAT);
-     usleep(philo->time_die/2*1000);
-     
-     return(0);
+	int i;
+	i =- 1;
+	
+	while(++i  < data->number_of_philosophers)
+	{
+		
+	    if(pthread_create(&data->pthread[i] , NULL, &ft_philo, & philo[i]))
+            return (ft_error_pthread());
+	}
+	//ft_monitoring(philo, data->number_of_philosophers );
+	 i = -1;
+	while(++i< data->number_of_philosophers)
+		pthread_join(data->pthread[i], NULL);
+	return(0);
 }
+
 
